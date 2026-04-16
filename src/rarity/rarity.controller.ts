@@ -8,6 +8,7 @@ export class RarityController {
 
     constructor(private readonly rarityService: RarityService) { }
 
+    //TODO: Agregar DTO para las rarezas
     @Get()
     @ApiOperation({})
     async findAll() {
@@ -19,11 +20,7 @@ export class RarityController {
     async create(@Body() createRarity: CreateRarityRequestDTO): Promise<CreateRarityResponseDTO> {
         var created = await this.rarityService.create(createRarity);
 
-        return {
-            id: created.id,
-            name: created.name,
-            percent: created.percent,
-        }
+        return new CreateRarityResponseDTO(created);
     }
 
 }

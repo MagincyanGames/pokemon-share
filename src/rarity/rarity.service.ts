@@ -14,7 +14,7 @@ export class RarityService {
     async findAll(): Promise<Rarity[]> {
         return await this.rarityRepository.find({})
     }
-    
+
     async create(body: CreateRarityRequestDTO): Promise<Rarity> {
         const created = this.rarityRepository.create(body)
         return await this.rarityRepository.save(created);

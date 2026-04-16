@@ -9,7 +9,6 @@ async function bootstrap() {
     .setTitle('Pokemon Share')
     .setDescription('API for Pokemon Share')
     .setVersion('1.0')
-    .addTag('accounts')
     .build();
     
   const document = SwaggerModule.createDocument(app, config);
